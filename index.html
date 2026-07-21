@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en"><head><style id="qw-theme">:root {
+  --color-bg: #121218;
+  --color-text: #e4e4ed;
+  --color-navbar-bg: #1a1a24;
+  --color-bg-chat-view: #121218;
+  --color-bg-secondary: #1a1a24;
+  --color-bg-tertiary: #1e1e2a;
+  --color-bg-hover: #2a2a38;
+  --color-surface: #1e1e2a;
+  --color-surface-hover: #2a2a38;
+  --color-surface-active: #353546;
+  --color-border: rgba(255, 255, 255, .12);
+  --color-border-light: rgba(255, 255, 255, .06);
+  --color-border-strong: #3a3a4e;
+  --color-primary: #8575ff;
+  --color-primary-dark: #4200db;
+  --color-primary-light: #8575ff;
+  --color-primary-bg: color-mix(in srgb, #8575ff 15%, transparent);
+  --color-primary-hover-border: #4200db;
+  --color-nav-icon-active: #8575ff;
+  --color-nav-hover-border: #8575ff;
+  --color-primary-alpha-3: color-mix(in srgb, #8575ff 3%, transparent);
+  --color-primary-alpha-5: color-mix(in srgb, #8575ff 5%, transparent);
+  --color-primary-alpha-8: color-mix(in srgb, #8575ff 8%, transparent);
+  --color-primary-alpha-12: color-mix(in srgb, #8575ff 12%, transparent);
+  --color-primary-alpha-15: color-mix(in srgb, #8575ff 15%, transparent);
+  --color-primary-alpha-20: color-mix(in srgb, #8575ff 20%, transparent);
+  --color-primary-alpha-25: color-mix(in srgb, #8575ff 25%, transparent);
+  --color-primary-alpha-30: color-mix(in srgb, #8575ff 30%, transparent);
+  --color-primary-alpha-40: color-mix(in srgb, #8575ff 40%, transparent);
+  --color-primary-alpha-50: color-mix(in srgb, #8575ff 50%, transparent);
+  --color-primary-alpha-60: color-mix(in srgb, #8575ff 60%, transparent);
+  --color-primary-subtle: color-mix(in srgb, #8575ff 25%, transparent);
+  --color-primary-border: color-mix(in srgb, #8575ff 50%, transparent);
+  --color-focus-ring: color-mix(in srgb, #8575ff 60%, transparent);
+  --color-sidebar-hover: color-mix(in srgb, #8575ff 15%, transparent);
+  --color-accent: #8575ff;
+  --color-accent-foreground: #8575ff;
+  --color-accent-dark: #4200db;
+  --color-accent-light: color-mix(in srgb, #8575ff 15%, transparent);
+  --color-accent-inverse: #ffffff;
+  --color-link: #8575ff;
+  --color-primary-gradient-end: color-mix(in srgb, #8575ff 35%, transparent);
+  --color-primary-bg-solid: #1a1530;
+  --color-user-bubble: #333843;
+  --color-user-bubble-text: #e4e4ed;
+  --color-text-secondary: #a0a0b4;
+  --color-text-tertiary: #8a8a9a;
+  --color-text-muted: #6e6e82;
+  --color-text-on-primary: #ffffff;
+  --color-success: #4ade80;
+  --color-success-dark: #00802f;
+  --color-success-light: #d9ffd6;
+  --color-success-hover: #005c26;
+  --color-success-bg: #1c2c22;
+  --color-success-border: #0e3d1c;
+  --color-success-foreground: #4ade80;
+  --color-success-dark-foreground: #00802f;
+  --color-success-text: #4ade80;
+  --color-error: #ff6b6b;
+  --color-error-dark: #db0000;
+  --color-error-light: #ffe0e0;
+  --color-error-hover: #3b1a24;
+  --color-error-bg: #3b1a24;
+  --color-error-border: #5e1a24;
+  --color-error-active-border: #db0000;
+  --color-error-foreground: #ff6b6b;
+  --color-error-dark-foreground: #db0000;
+  --color-error-inverse: #ffffff;
+  --color-error-text: #ff6b6b;
+  --color-warning: #fbbf24;
+  --color-warning-dark: #573a00;
+  --color-warning-light: #fffbbd;
+  --color-warning-hover: #db9200;
+  --color-warning-bg: #3d3520;
+  --color-warning-border: #5e4a1a;
+  --color-warning-foreground: #fbbf24;
+  --color-warning-dark-foreground: #573a00;
+  --color-warning-inverse: #573a00;
+  --color-surface-warning: #fffbbd;
+  --color-text-warning: #573a00;
+  --color-info: #60a5fa;
+  --color-info-dark: #006ce0;
+  --color-info-light: #d1f1ff;
+  --color-info-hover: #003b8f;
+  --color-info-bg: #1a2a42;
+  --color-info-border: #0f3d6e;
+  --color-info-foreground: #60a5fa;
+  --color-info-dark-foreground: #002a66;
+  --color-info-inverse: #ffffff;
+  --color-overlay: rgba(0, 0, 0, .7);
+  --color-shadow: rgba(0, 0, 0, .3);
+  --color-hover: rgba(255, 255, 255, .05);
+  --color-tooltip-bg: rgba(30, 30, 42, .95);
+  --color-tooltip-text: #e4e4ed;
+  --color-voice-purple: #8575ff;
+  --color-voice-purple-dark: #4200db;
+  --color-voice-purple-light: #8575ff;
+  --color-voice-red: #ff6b6b;
+  --color-voice-red-dark: #db0000;
+  --color-voice-amber: #fbbf24;
+  --color-voice-purple-glow: rgba(133, 117, 255, .4);
+  --color-voice-red-glow: rgba(219, 0, 0, .4);
+  --font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "Monaco", "Menlo", "Consolas", monospace;
+  --text-2xs: .5625rem;
+  --text-xs: .625rem;
+  --text-sm: .6875rem;
+  --text-base: .75rem;
+  --text-md: .8125rem;
+  --text-lg: .875rem;
+  --text-xl: 1rem;
+  --text-2xl: 1.125rem;
+  --text-3xl: 1.25rem;
+  --text-4xl: 1.5rem;
+  --text-5xl: 2rem;
+  --spacing-1: calc(.25rem * 1);
+  --spacing-1-5: calc(.25rem * 1.5);
+  --spacing-2: calc(.25rem * 2);
+  --spacing-3: calc(.25rem * 3);
+  --spacing-4: calc(.25rem * 4);
+  --spacing-5: calc(.25rem * 5);
+  --spacing-6: calc(.25rem * 6);
+  --spacing-7: calc(.25rem * 7);
+  --spacing-8: calc(.25rem * 8);
+  --spacing-9: calc(.25rem * 9);
+  --spacing-10: calc(.25rem * 10);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-card: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 8px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, .3);
+  --color-success-bg-solid: #1a3d28;
+  --color-error-bg-solid: #4a2028;
+  --color-error-border-solid: #5e1a24;
+  --color-warning-bg-solid: #4a3a1e;
+  --color-warning-text: #fbbf24;
+  --color-info-bg-solid: #1a3050;
+  --color-info-bg-solid-alt: #222240;
+  --color-info-text: #60a5fa;
+  --color-info-text-alt: #818cf8;
+  --color-emerald: #34d399;
+  --color-teal: #5eead4;
+  --color-code-bg: #1e1e2a;
+  --color-code-header-bg: #252535;
+  --color-code-text: #e4e4ed;
+  --color-code-border: #2e2e3e;
+  --color-code-muted: #6e6e82;
+  --color-inline-code-bg: #1e1e2a;
+  --color-inline-code-text: #e4e4ed;
+  --color-inline-code-border: #2e2e3e;
+  --color-scrollbar-thumb: #3a3a4e;
+  --color-scrollbar-track: transparent;
+  --color-graph-node-text: #e4e4ed;
+  --color-graph-node-text-dim: #6e6e82;
+  --color-graph-edge-default: #6e6e82;
+  --color-graph-edge-cross: #F39C12;
+  --color-graph-edge-text: #a0a0b4;
+  --color-graph-edge-stroke: #1a1a24;
+  --color-graph-highlight-bg: #FF6B6B;
+  --color-graph-highlight-border: #E74C3C;
+  --color-graph-search-bg: #FFD700;
+  --color-graph-search-border: #FFA500;
+  --color-graph-focus-border: #FF4444;
+  --color-graph-external-border: #6e6e82;
+  --color-graph-cat-file: #5DADE2;
+  --color-graph-cat-folder: #AAB7B8;
+  --color-graph-cat-file-aggregate: #5499C7;
+  --color-graph-cat-class: #BB8FCE;
+  --color-graph-cat-function: #58D68D;
+  --color-graph-cat-method: #48C9B0;
+  --color-graph-cat-variable: #F5B041;
+  --color-graph-cat-import: #EB984E;
+  --color-graph-cat-module: #7E8CE0;
+  --color-graph-cat-concept: #EC7063;
+  --color-graph-cat-person: #FF8A8A;
+  --color-graph-cat-org: #76D7C4;
+  --color-graph-cat-organization: #76D7C4;
+  --color-graph-cat-product: #B8B0FE;
+  --color-graph-cat-metric: #FEA0C0;
+  --color-graph-cat-location: #7E9BB5;
+  --color-graph-cat-date: #F092C0;
+  --color-graph-cat-code: #5DADE2;
+  --color-graph-cat-doc: #AAB7B8;
+  --color-graph-cat-url: #45D6B5;
+  --color-graph-cat-email: #8E7CF7;
+  --color-graph-cat-unknown: #D5DBDB;
+  --color-graph-rel-contains: #D5DBDB;
+  --color-graph-rel-extends: #BB8FCE;
+  --color-graph-rel-implements: #5DADE2;
+  --color-graph-rel-imports: #EB984E;
+  --color-graph-rel-uses: #58D68D;
+  --color-graph-rel-calls: #52BE80;
+  --color-graph-rel-references: #F5B041;
+  --color-graph-rel-related-to: #AAB7B8;
+  --color-graph-rel-works-on: #EC7063;
+  --color-graph-rel-owns: #48C9B0;
+  --color-graph-rel-depends-on: #EB984E;
+  --color-graph-rel-parent-of: #D5DBDB;
+  --qs-content: #fff;
+  --qs-main: #fff;
+  --qs-primary-foreground: #131920;
+  --qs-secondary-foreground: #656871;
+  --qs-tertiary-foreground: #6e6e82;
+  --qs-placeholder-foreground: #8c8c94;
+  --qs-divider: #dedee3;
+  --qs-default-border: #8c8c94;
+  --qs-neutral-soft: #b4b4bb;
+  --qs-neutral-gray-50: #1e1e2a;
+  --qs-tertiary-background: #1e1e2a;
+  --qs-action-hover: #f3f3f7;
+  --qs-primary-default: #4200db;
+  --qs-primary-dark: #35009e;
+  --qs-primary-light: #e8e6ff;
+  --qs-success-default: #00802f;
+  --qs-error-default: #db0000;
+  --qs-font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --qs-font-family: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --qs-font-base-letter-spacing: .15px;
+  --qs-shadow-sm: 0 0 2px 0 #00000029, 0 0 4px 0 #00000029;
+  --qs-shadow-md: 0 0 2px 0 #00000029, 0 2px 8px 1px #00000029;
+  --qs-shadow-lg: 0 4px 16px 4px #00000029, 0 2px 6px 1px #00000029;
+  --qs-shadow-xl: 0 4px 8px 2px #00000029, 0 6px 20px 4px #00000029;
+  --qs-width-modal-sm: 384px;
+  --qs-width-modal-md: 600px;
+  --qs-width-modal-lg: 1136px;
+  --qs-grid-gap: 16px;
+  --qs-grid-gap-xl: 24px;
+  --qs-primary-medium: #8575ff;
+  --qs-primary-inverse: #fff;
+  --qs-neutral-lightest: #f9f9fb;
+  --qs-neutral-light: #f3f3f7;
+  --qs-neutral-default: #dedee3;
+  --qs-neutral-medium: #8c8c94;
+  --qs-neutral-deep: #656871;
+  --qs-neutral-dark: #333843;
+  --qs-neutral-strong: #131920;
+  --qs-neutral-white: #fff;
+  --qs-neutral-black: #000;
+  --qs-success-medium: #005c26;
+  --qs-success-dark: #00471e;
+  --qs-success-light: #d9ffd6;
+  --qs-success-inverse: #fff;
+  --qs-info-default: #006ce0;
+  --qs-info-medium: #003b8f;
+  --qs-info-dark: #002a66;
+  --qs-info-light: #d1f1ff;
+  --qs-info-inverse: #fff;
+  --qs-warning-default: #f2b100;
+  --qs-warning-medium: #db9200;
+  --qs-warning-dark: #573a00;
+  --qs-warning-light: #fffbbd;
+  --qs-warning-inverse: #573a00;
+  --qs-warning-experimental: #f2b100;
+  --qs-warning-experimental-light: #fffbbd;
+  --qs-warning-experimental-light-foreground: #fffbbd;
+  --qs-error-medium: #900;
+  --qs-error-dark: #700000;
+  --qs-error-light: #ffe0e0;
+  --qs-error-inverse: #fff;
+  --qs-connection-default: #db3300;
+  --qs-connection-soft: #ff997a;
+  --qs-connection-light: #ffe0d6;
+  --qs-connection-dark: #661800;
+  --qs-automation-default: #b3008f;
+  --qs-automation-medium: #d600ba;
+  --qs-automation-soft: #ff94f1;
+  --qs-automation-light: #ffe0fb;
+  --qs-automation-dark: #660052;
+  --qs-insight-default: #a000b8;
+  --qs-insight-soft: #f299ff;
+  --qs-insight-light: #fce6ff;
+  --qs-insight-dark: #590066;
+  --qs-visualization-default: #7300e5;
+  --qs-visualization-soft: #d4a8ff;
+  --qs-visualization-light: #f2e5ff;
+  --qs-visualization-dark: #45008a;
+  --qs-spice: #ff9800;
+  --qs-coachmark: #006ce0;
+  --qs-brand: #fff;
+  --qs-brand-foreground: #131920;
+  --qs-brand-navbar: #131920;
+  --qs-brand-navbar-foreground: #fff;
+  --qs-brand-navbar-light: #dedee3;
+  --qs-brand-navbar-dark: #000;
+  --qs-application-navbar: #4200db;
+  --qs-application-navbar-foreground: #fff;
+  --qs-application-navbar-light: #e8e6ff;
+  --qs-application-navbar-dark: #35009e;
+  --qs-dimension: #4200db;
+  --qs-dimension-foreground: #fff;
+  --qs-dimension-experimental: #4200db;
+  --qs-dimension-experimental-foreground: #4200db;
+  --qs-measure: #00802f;
+  --qs-measure-foreground: #fff;
+  --qs-measure-experimental: #f2b100;
+  --qs-measure-experimental-foreground: #f2b100;
+  --qs-content-inverse: #333843;
+  --qs-content-inverse-active: #131920;
+  --qs-secondary: #dedee3;
+  --qs-disabled: #8c8c94;
+  --qs-divider-light: #f3f3f7;
+  --qs-hover-border: #333843;
+  --qs-active-border: #4200db;
+  --qs-disabled-border: #dedee3;
+  --qs-error-border: #ffe0e0;
+  --qs-error-active-border: #db0000;
+  --qs-disabled-foreground: #b4b4bb;
+  --qs-primary-inverse-foreground: #fff;
+  --qs-error-foreground: #db0000;
+  --qs-contrast-foreground: #131920;
+  --qs-main-foreground: #131920;
+  --qs-main-secondary-foreground: #656871;
+  --qs-action-disabled: #f3f3f7;
+  --qs-action-active: #e8e6ff;
+  --qs-default-badge: #dedee3;
+  --qs-tag-default: #dedee3;
+  --qs-tag-soft-border: #b4b4bb;
+  --qs-focus-offset: 1px;
+  --qs-toggle-tile-sm: calc(.25rem * 8);
+  --qs-toggle-tile-md: calc(.25rem * 12);
+  --qs-toggle-tile-lg: calc(.25rem * 15);
+  --qs-shadow-pin-right: inset 4px 0 4px -4px #00000029;
+  --qs-shadow-pin-left: inset -4px 0 4px -4px #00000029;
+  --react-pdf-text-layer: 1;
+  --highlight-bg-color: rgba(180, 0, 170, 1);
+  --highlight-selected-bg-color: rgba(0, 100, 0, 1);
+  --react-pdf-annotation-layer: 1;
+  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>");
+  --input-focus-border-color: Highlight;
+  --input-focus-outline: 1px solid Canvas;
+  --input-unfocused-border-color: transparent;
+  --input-disabled-border-color: transparent;
+  --input-hover-border-color: black;
+  --link-outline: none;
+  color-scheme: dark;
+}
+body { background: var(--color-bg); color: var(--color-text); }
+a { color: var(--color-link, var(--color-primary)); }</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#1a1a2e">
+    <title>The Shelf</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231a1a2e'/><text y='72' x='50' text-anchor='middle' font-size='60'>📚</text></svg>">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        button {
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+            min-height: 100vh;
+            padding: 20px;
+            padding-top: env(safe-area-inset-top, 20px);
+            padding-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-top: 10px;
+        }
+
+        .mode-toggle {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+            justify-content: flex-start;
+        }
+
+        .mode-btn {
+            padding: 8px 16px;
+            border: 1px solid #333;
+            border-radius: 10px;
+            background: #16213e;
+            color: #888;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .mode-btn.active {
+            background: #4a9eff;
+            border-color: #4a9eff;
+            color: white;
+        }
+
+        .folder-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+
+        .folder-tab {
+            padding: 10px 18px;
+            border-radius: 12px;
+            border: 1px solid #333;
+            background: #16213e;
+            color: #888;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .folder-tab.active {
+            background: #4a9eff;
+            border-color: #4a9eff;
+            color: white;
+        }
+
+        .folder-tab.add-folder {
+            border-style: dashed;
+            color: #555;
+            font-size: 18px;
+            padding: 10px 14px;
+        }
+
+        .folder-tab.add-folder:hover {
+            border-color: #4a9eff;
+            color: #4a9eff;
+        }
+
+        .folder-tab.delete-folder {
+            border-style: dashed;
+            border-color: #552222;
+            color: #ff4d4d;
+            font-size: 12px;
+            padding: 10px 14px;
+        }
+
+        .add-bar {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .add-bar input {
+            flex: 1;
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 1px solid #333;
+            background: #16213e;
+            color: #eee;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .add-bar input:focus {
+            border-color: #4a9eff;
+        }
+
+        .add-bar button {
+            padding: 12px 20px;
+            border-radius: 12px;
+            border: none;
+            background: #4a9eff;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #16213e;
+            border: 1px solid #333;
+            border-radius: 12px;
+            margin-top: 4px;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 100;
+            display: none;
+        }
+
+        .search-results.visible {
+            display: block;
+        }
+
+        .search-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            cursor: pointer;
+            border-bottom: 1px solid #222;
+        }
+
+        .search-item:last-child { border-bottom: none; }
+        .search-item:hover, .search-item:active { background: #1f2f50; }
+
+        .search-item img {
+            width: 36px;
+            height: 52px;
+            object-fit: cover;
+            border-radius: 4px;
+            background: #333;
+        }
+
+        .search-item-info { flex: 1; }
+        .search-item-name { font-size: 15px; font-weight: 600; }
+        .search-item-meta { font-size: 12px; color: #888; }
+
+        .category-section { margin-bottom: 28px; }
+
+        .category-header {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .category-header .collapse-icon {
+            font-size: 12px;
+            transition: transform 0.2s;
+        }
+
+        .category-header.collapsed .collapse-icon {
+            transform: rotate(-90deg);
+        }
+
+        .category-section .show-list.hidden {
+            display: none;
+        }
+
+        .category-header {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            padding-left: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .category-header.current { color: #4a9eff; }
+        .category-header.towatch { color: #bb86fc; }
+        .category-header.upcoming { color: #f0a500; }
+        .category-header.finished { color: #6fbf6f; }
+
+        .category-count {
+            font-size: 12px;
+            font-weight: 500;
+            background: #2a2a4a;
+            padding: 2px 8px;
+            border-radius: 10px;
+            color: #888;
+        }
+
+        .show-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .show-card {
+            background: #16213e;
+            border-radius: 16px;
+            padding: 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .show-poster {
+            width: 50px;
+            height: 72px;
+            object-fit: cover;
+            border-radius: 8px;
+            background: #333;
+            flex-shrink: 0;
+        }
+
+        .show-poster.placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .show-info { flex: 1; min-width: 0; }
+
+        .show-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 3px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .show-episode { font-size: 13px; color: #888; }
+
+        .show-actions {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 6px;
+            flex-wrap: wrap;
+        }
+
+        .status-btn {
+            font-size: 11px;
+            padding: 4px 8px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            background: none;
+            color: #888;
+            cursor: pointer;
+        }
+
+        .status-btn:hover, .status-btn.active {
+            border-color: #4a9eff;
+            color: #4a9eff;
+        }
+
+        .episode-controls {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+
+        .ep-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: none;
+            background: #2a2a4a;
+            color: #eee;
+            font-size: 22px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+            position: relative;
+            z-index: 2;
+        }
+
+        .ep-btn.plus { background: #4a9eff; }
+
+        .delete-btn {
+            background: #3a1a1a;
+            border: 1px solid #552222;
+            color: #ff4d4d;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 12px 14px;
+            border-radius: 10px;
+            flex-shrink: 0;
+            font-weight: 600;
+            min-width: 44px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+            position: relative;
+            z-index: 2;
+        }
+
+        .empty-state {
+            text-align: center;
+            color: #555;
+            margin-top: 60px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .season-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 4px;
+        }
+
+        .season-btn {
+            background: none;
+            border: none;
+            color: #4a9eff;
+            font-size: 12px;
+            cursor: pointer;
+            padding: 4px 6px;
+        }
+
+        .searching-msg {
+            padding: 14px;
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+        }
+
+        .manual-add {
+            padding: 10px 14px;
+            cursor: pointer;
+            border-top: 1px solid #333;
+            color: #4a9eff;
+            font-size: 14px;
+            touch-action: manipulation;
+        }
+
+        .manual-add:hover { background: #1f2f50; }
+    </style>
+</head>
+<body>
+    <h1>📚 The Shelf</h1>
+
+    <div style="display:flex;gap:6px;margin-bottom:12px;"><button id="exportBtn" style="padding:5px 10px;border-radius:8px;border:1px solid #333;background:#16213e;color:#888;font-size:11px;cursor:pointer;">Export Data</button><button id="importBtn" style="padding:5px 10px;border-radius:8px;border:1px solid #333;background:#16213e;color:#888;font-size:11px;cursor:pointer;">Import Data</button></div>
+    <input type="file" id="importFile" accept=".json" style="display:none;">
+    <div class="mode-toggle" id="modeToggle">
+        <button class="mode-btn active" data-mode="shows">📺 Shows</button>
+        <button class="mode-btn" data-mode="movies">🎬 Movies</button>
+        <button class="mode-btn" data-mode="books">📚 Books</button>
+    </div>
+
+    <div class="folder-tabs" id="folderTabs"></div>
+    
+    <div class="add-bar">
+        <input type="text" id="showInput" placeholder="Search for a show..." autocomplete="off">
+        <button id="searchBtn">Search</button>
+        <div class="search-results" id="searchResults"></div>
+    </div>
+
+    <div id="content"></div>
+
+    <script>
+        // FIREBASE SETUP
+        var firebaseConfig = {
+            apiKey: "AIzaSyCiBJZkXeNsfwu6R0iT4fFZNJeZI9G-M5s",
+            authDomain: "the-shelf-85905.firebaseapp.com",
+            databaseURL: "https://the-shelf-85905-default-rtdb.firebaseio.com",
+            projectId: "the-shelf-85905",
+            storageBucket: "the-shelf-85905.firebasestorage.app",
+            messagingSenderId: "123333977275",
+            appId: "1:123333977275:web:5b6be97379452f264e359e"
+        };
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.database();
+        var dbRef = db.ref('shelf');
+        var firebaseReady = false;
+        var ignoreNextSync = false;
+
+        var data = null;
+        var storageAvailable = true;
+
+        var defaultData = {
+            mode: 'shows',
+            shows: {
+                folders: [
+                    { name: 'Gunnar', items: [] },
+                    { name: 'Katie & Gunnar', items: [] }
+                ],
+                activeFolder: 0
+            },
+            movies: {
+                folders: [
+                    { name: 'Gunnar', items: [] },
+                    { name: 'Katie & Gunnar', items: [] }
+                ],
+                activeFolder: 0
+            },
+            books: {
+                folders: [
+                    { name: 'Gunnar', items: [] }
+                ],
+                activeFolder: 0
+            }
+        };
+
+        try {
+            var saved = JSON.parse(localStorage.getItem('trackerDataV4') || 'null');
+            if (saved && saved.shows && saved.movies && saved.books) {
+                data = saved;
+            } else {
+                // Try older versions
+                var v3 = JSON.parse(localStorage.getItem('trackerDataV3') || 'null');
+                var v2 = JSON.parse(localStorage.getItem('trackerDataV2') || 'null');
+                var v1 = JSON.parse(localStorage.getItem('showTrackerData') || 'null');
+                var old = v3 || v2 || v1;
+                if (old && old.shows) {
+                    data = { mode: old.mode || 'shows', shows: old.shows, movies: old.movies || defaultData.movies, books: old.books || defaultData.books };
+                } else {
+                    data = JSON.parse(JSON.stringify(defaultData));
+                }
+            }
+        } catch (e) {
+            storageAvailable = false;
+            data = JSON.parse(JSON.stringify(defaultData));
+        }
+
+        // Ensure all folders use 'items' key
+        var modes = ['shows', 'movies', 'books'];
+        for (var mi = 0; mi < modes.length; mi++) {
+            var mkey = modes[mi];
+            if (data[mkey] && data[mkey].folders) {
+                for (var fi = 0; fi < data[mkey].folders.length; fi++) {
+                    var f = data[mkey].folders[fi];
+                    if (f.shows && !f.items) { f.items = f.shows; delete f.shows; }
+                    if (!f.items) f.items = [];
+                }
+            }
+        }
+
+        // One-time migration: move book items (those with 'author') from movies to books
+        if (data.movies && data.books) {
+            var moved = false;
+            for (var fi = 0; fi < data.movies.folders.length; fi++) {
+                var movieFolder = data.movies.folders[fi];
+                var remaining = [];
+                for (var ii = 0; ii < movieFolder.items.length; ii++) {
+                    var item = movieFolder.items[ii];
+                    if (item.author) {
+                        // Find matching books folder or use first one
+                        var targetFolder = data.books.folders[0];
+                        targetFolder.items.push(item);
+                        moved = true;
+                    } else {
+                        remaining.push(item);
+                    }
+                }
+                movieFolder.items = remaining;
+            }
+        }
+
+        function save() {
+            try {
+                if (storageAvailable) localStorage.setItem('trackerDataV4', JSON.stringify(data));
+            } catch (e) {}
+            // Sync to Firebase
+            ignoreNextSync = true;
+            dbRef.set(data);
+        }
+
+        function getModeData() {
+            return data[data.mode];
+        }
+
+        function getItems() {
+            var md = getModeData();
+            return md.folders[md.activeFolder].items;
+        }
+
+        function getCategories() {
+            if (data.mode === 'books') {
+                return [
+                    { key: 'current', title: 'Currently Reading', icon: '📖', css: 'current' },
+                    { key: 'towatch', title: 'To Read', icon: '📋', css: 'towatch' },
+                    { key: 'upcoming', title: 'Upcoming', icon: '🕐', css: 'upcoming' },
+                    { key: 'finished', title: 'Finished', icon: '✓', css: 'finished' }
+                ];
+            } else {
+                return [
+                    { key: 'current', title: 'Currently Watching', icon: '▶', css: 'current' },
+                    { key: 'towatch', title: 'To Watch', icon: '📋', css: 'towatch' },
+                    { key: 'upcoming', title: 'Upcoming', icon: '🕐', css: 'upcoming' },
+                    { key: 'finished', title: 'Finished', icon: '✓', css: 'finished' }
+                ];
+            }
+        }
+
+        function renderModeToggle() {
+            var btns = document.querySelectorAll('.mode-btn');
+            for (var i = 0; i < btns.length; i++) {
+                if (btns[i].getAttribute('data-mode') === data.mode) {
+                    btns[i].classList.add('active');
+                } else {
+                    btns[i].classList.remove('active');
+                }
+            }
+            var input = document.getElementById('showInput');
+            if (data.mode === 'shows') input.placeholder = 'Search for a show...';
+            else if (data.mode === 'movies') input.placeholder = 'Search for a movie...';
+            else input.placeholder = 'Search for a book...';
+        }
+
+        function renderTabs() {
+            var md = getModeData();
+            var html = '';
+            for (var i = 0; i < md.folders.length; i++) {
+                var active = (i === md.activeFolder) ? ' active' : '';
+                html += '<button class="folder-tab' + active + '" data-folder="' + i + '">' + esc(md.folders[i].name) + '</button>';
+            }
+            html += '<button class="folder-tab add-folder" data-action="add-folder">+</button>';
+            if (md.folders.length > 1) {
+                html += '<button class="folder-tab delete-folder" data-action="delete-folder">🗑 Delete "' + esc(md.folders[md.activeFolder].name) + '"</button>';
+            }
+            document.getElementById('folderTabs').innerHTML = html;
+        }
+
+        function renderCategory(cat, itemsList) {
+            if (itemsList.length === 0) return '';
+            var isShows = (data.mode === 'shows');
+            var html = '<div class="category-section">';
+            var collapseState = getCollapseState(cat.key);
+            var collapsedClass = collapseState ? ' collapsed' : '';
+            var hiddenClass = collapseState ? ' hidden' : '';
+            html += '<div class="category-header ' + cat.css + collapsedClass + '" data-collapse="' + cat.key + '"><span class="collapse-icon">▼</span> ' + cat.icon + ' ' + cat.title + '<span class="category-count">' + itemsList.length + '</span></div>';
+            html += '<div class="show-list' + hiddenClass + '">';
+            for (var j = 0; j < itemsList.length; j++) {
+                var idx = itemsList[j].idx;
+                var item = itemsList[j].item;
+                var posterHtml = '';
+                if (item.image) {
+                    posterHtml = '<img class="show-poster" src="' + item.image + '" alt="">';
+                } else {
+                    var emoji = data.mode === 'shows' ? '📺' : (data.mode === 'movies' ? '🎬' : '📚');
+                    posterHtml = '<div class="show-poster placeholder">' + emoji + '</div>';
+                }
+
+                var detailHtml = '';
+                if (isShows) {
+                    detailHtml = '<div class="show-episode">S' + item.season + ' · E' + item.episode + '</div>' +
+                        '<div class="season-row">' +
+                            '<button class="season-btn" data-action="season-down" data-idx="' + idx + '">◀ Season</button>' +
+                            '<button class="season-btn" data-action="season-up" data-idx="' + idx + '">Season ▶</button>' +
+                        '</div>';
+                } else if (item.author) {
+                    detailHtml = '<div class="show-episode">' + esc(item.author) + '</div>';
+                } else if (item.year) {
+                    detailHtml = '<div class="show-episode">' + item.year + '</div>';
+                }
+
+                var controlsHtml = '';
+                if (isShows) {
+                    controlsHtml = '<div class="episode-controls">' +
+                        '<button class="ep-btn" data-action="ep-down" data-idx="' + idx + '">−</button>' +
+                        '<button class="ep-btn plus" data-action="ep-up" data-idx="' + idx + '">+</button>' +
+                    '</div>';
+                }
+
+                html += '<div class="show-card" data-idx="' + idx + '">' +
+                    posterHtml +
+                    '<div class="show-info">' +
+                        '<div class="show-name">' + esc(item.name) + '</div>' +
+                        detailHtml +
+                        '<div class="show-actions">' + statusButtons(idx, item.status) + '</div>' +
+                    '</div>' +
+                    controlsHtml +
+                    '<button class="delete-btn" data-action="delete" data-idx="' + idx + '">✕</button>' +
+                '</div>';
+            }
+            html += '</div></div>';
+            return html;
+        }
+
+        function statusButtons(idx, current) {
+            var cats = getCategories();
+            var html = '';
+            for (var s = 0; s < cats.length; s++) {
+                var active = (cats[s].key === current) ? ' active' : '';
+                html += '<button class="status-btn' + active + '" data-action="status" data-idx="' + idx + '" data-status="' + cats[s].key + '">' + cats[s].title + '</button>';
+            }
+            return html;
+        }
+
+        function render() {
+            renderModeToggle();
+            renderTabs();
+            var items = getItems();
+            var content = document.getElementById('content');
+            var cats = getCategories();
+            var typeLabel = data.mode === 'shows' ? 'shows' : (data.mode === 'movies' ? 'movies' : 'books');
+
+            if (items.length === 0) {
+                content.innerHTML = '<div class="empty-state">No ' + typeLabel + ' in this folder yet.<br>Search above to add one! 🍿</div>';
+                return;
+            }
+
+            var grouped = {};
+            for (var c = 0; c < cats.length; c++) grouped[cats[c].key] = [];
+
+            for (var i = 0; i < items.length; i++) {
+                var bucket = items[i].status || 'current';
+                if (!grouped[bucket]) grouped[bucket] = [];
+                grouped[bucket].push({ idx: i, item: items[i] });
+            }
+
+            // Sort alphabetically within each category
+            for (var c = 0; c < cats.length; c++) {
+                grouped[cats[c].key].sort(function(a, b) {
+                    return a.item.name.toLowerCase().localeCompare(b.item.name.toLowerCase());
+                });
+            }
+
+            var html = '';
+            for (var c = 0; c < cats.length; c++) {
+                html += renderCategory(cats[c], grouped[cats[c].key]);
+            }
+            content.innerHTML = html;
+        }
+
+        // MODE TOGGLE
+        document.getElementById('modeToggle').addEventListener('click', function(e) {
+            var btn = e.target.closest('[data-mode]');
+            if (!btn) return;
+            data.mode = btn.getAttribute('data-mode');
+            save();
+            render();
+        });
+
+        // FOLDER TABS
+        document.getElementById('folderTabs').addEventListener('click', function(e) {
+            var addBtn = e.target.closest('[data-action="add-folder"]');
+            if (addBtn) {
+                var name = prompt('New folder name:');
+                if (name && name.trim()) {
+                    var md = getModeData();
+                    md.folders.push({ name: name.trim(), items: [] });
+                    md.activeFolder = md.folders.length - 1;
+                    save();
+                    render();
+                }
+                return;
+            }
+            var delBtn = e.target.closest('[data-action="delete-folder"]');
+            if (delBtn) {
+                var md = getModeData();
+                var folderName = md.folders[md.activeFolder].name;
+                var count = md.folders[md.activeFolder].items.length;
+                var msg = 'Delete folder "' + folderName + '"?';
+                if (count > 0) msg += '\n\nThis will remove ' + count + ' item(s) in it.';
+                if (confirm(msg)) {
+                    md.folders.splice(md.activeFolder, 1);
+                    md.activeFolder = 0;
+                    save();
+                    render();
+                }
+                return;
+            }
+            var tab = e.target.closest('[data-folder]');
+            if (!tab) return;
+            getModeData().activeFolder = parseInt(tab.getAttribute('data-folder'), 10);
+            save();
+            render();
+        });
+
+        // ITEM ACTIONS
+        document.getElementById('content').addEventListener('click', function(e) {
+            var btn = e.target.closest('[data-action]');
+            if (!btn) return;
+            e.preventDefault();
+            e.stopPropagation();
+
+            var action = btn.getAttribute('data-action');
+            var idx = parseInt(btn.getAttribute('data-idx'), 10);
+            var items = getItems();
+
+            if (isNaN(idx) || idx < 0 || idx >= items.length) return;
+
+            switch (action) {
+                case 'ep-up': items[idx].episode++; break;
+                case 'ep-down': items[idx].episode = Math.max(1, items[idx].episode - 1); break;
+                case 'season-up': items[idx].season++; items[idx].episode = 1; break;
+                case 'season-down': items[idx].season = Math.max(1, items[idx].season - 1); items[idx].episode = 1; break;
+                case 'status': items[idx].status = btn.getAttribute('data-status'); break;
+                case 'delete':
+                    if (!confirm('Remove "' + items[idx].name + '"?')) return;
+                    items.splice(idx, 1);
+                    break;
+                default: return;
+            }
+            save();
+            render();
+        });
+
+        // SEARCH
+        function doSearch() {
+            var input = document.getElementById('showInput');
+            var query = input.value.trim();
+            if (!query) return;
+
+            var results = document.getElementById('searchResults');
+            results.innerHTML = '<div class="searching-msg">Searching...</div>';
+            results.classList.add('visible');
+
+            if (data.mode === 'shows' || data.mode === 'movies') {
+                // TVMaze works for both (supports CORS from file://)
+                fetch('https://api.tvmaze.com/search/shows?q=' + encodeURIComponent(query))
+                    .then(function(r) { return r.json(); })
+                    .then(function(apiData) {
+                        var html = '';
+                        var items = apiData.slice(0, 5);
+                        for (var i = 0; i < items.length; i++) {
+                            var s = items[i].show;
+                            var img = (s.image && s.image.medium) ? s.image.medium : '';
+                            var year = s.premiered ? s.premiered.substring(0, 4) : '';
+                            var genres = s.genres ? s.genres.slice(0, 2).join(', ') : '';
+                            var meta = [year, genres].filter(Boolean).join(' \u00b7 ');
+                            var imgTag = img ? '<img src="' + img + '" alt="">' : '<div style="width:36px;height:52px;background:#333;border-radius:4px;"></div>';
+                            html += '<div class="search-item" data-name="' + escAttr(s.name) + '" data-image="' + (img || '') + '" data-year="' + year + '">' +
+                                imgTag +
+                                '<div class="search-item-info">' +
+                                    '<div class="search-item-name">' + esc(s.name) + '</div>' +
+                                    '<div class="search-item-meta">' + meta + '</div>' +
+                                '</div>' +
+                            '</div>';
+                        }
+                        html += '<div class="manual-add" data-manual="true">+ Add "' + esc(query) + '" manually</div>';
+                        results.innerHTML = html;
+                    })
+                    .catch(function() {
+                        results.innerHTML = '<div class="manual-add" data-manual="true">Search failed. Add "' + esc(query) + '" manually?</div>';
+                    });
+            } else {
+                // Books - Open Library (supports CORS from file://)
+                fetch('https://openlibrary.org/search.json?q=' + encodeURIComponent(query) + '&limit=5')
+                    .then(function(r) { return r.json(); })
+                    .then(function(apiData) {
+                        var html = '';
+                        var docs = apiData.docs || [];
+                        for (var i = 0; i < Math.min(docs.length, 5); i++) {
+                            var b = docs[i];
+                            var img = b.cover_i ? 'https://covers.openlibrary.org/b/id/' + b.cover_i + '-M.jpg' : '';
+                            var author = b.author_name ? b.author_name[0] : '';
+                            var year = b.first_publish_year || '';
+                            var meta = [author, year].filter(Boolean).join(' \u00b7 ');
+                            var imgTag = img ? '<img src="' + img + '" alt="">' : '<div style="width:36px;height:52px;background:#333;border-radius:4px;"></div>';
+                            html += '<div class="search-item" data-name="' + escAttr(b.title) + '" data-image="' + (img || '') + '" data-author="' + escAttr(author) + '">' +
+                                imgTag +
+                                '<div class="search-item-info">' +
+                                    '<div class="search-item-name">' + esc(b.title) + '</div>' +
+                                    '<div class="search-item-meta">' + meta + '</div>' +
+                                '</div>' +
+                            '</div>';
+                        }
+                        html += '<div class="manual-add" data-manual="true">+ Add "' + esc(query) + '" manually</div>';
+                        results.innerHTML = html;
+                    })
+                    .catch(function() {
+                        results.innerHTML = '<div class="manual-add" data-manual="true">Search failed. Add "' + esc(query) + '" manually?</div>';
+                    });
+            }
+        }
+
+        // SEARCH RESULT CLICKS
+        document.getElementById('searchResults').addEventListener('click', function(e) {
+            var item = e.target.closest('.search-item');
+            var manual = e.target.closest('.manual-add');
+
+            if (item) {
+                var name = item.getAttribute('data-name');
+                var image = item.getAttribute('data-image') || '';
+                var author = item.getAttribute('data-author') || '';
+                var year = item.getAttribute('data-year') || '';
+                var newItem = { name: name, image: image, status: 'current' };
+                if (data.mode === 'shows') {
+                    newItem.season = 1;
+                    newItem.episode = 1;
+                } else if (data.mode === 'books') {
+                    newItem.author = author;
+                } else {
+                    newItem.year = year;
+                }
+                getItems().unshift(newItem);
+                document.getElementById('showInput').value = '';
+                document.getElementById('searchResults').classList.remove('visible');
+                save();
+                render();
+            } else if (manual) {
+                var input = document.getElementById('showInput');
+                var name = input.value.trim();
+                if (!name) return;
+                var newItem = { name: name, image: '', status: 'current' };
+                if (data.mode === 'shows') {
+                    newItem.season = 1;
+                    newItem.episode = 1;
+                }
+                getItems().unshift(newItem);
+                input.value = '';
+                document.getElementById('searchResults').classList.remove('visible');
+                save();
+                render();
+            }
+        });
+
+        // COLLAPSE STATE
+        function getCollapseState(key) {
+            try {
+                var states = JSON.parse(localStorage.getItem('shelfCollapsed') || '{}');
+                return states[data.mode + '_' + key] || false;
+            } catch(e) { return false; }
+        }
+
+        function setCollapseState(key, collapsed) {
+            try {
+                var states = JSON.parse(localStorage.getItem('shelfCollapsed') || '{}');
+                states[data.mode + '_' + key] = collapsed;
+                localStorage.setItem('shelfCollapsed', JSON.stringify(states));
+            } catch(e) {}
+        }
+
+        // Category header collapse toggle
+        document.getElementById('content').addEventListener('click', function(e) {
+            var header = e.target.closest('[data-collapse]');
+            if (header) {
+                var key = header.getAttribute('data-collapse');
+                var isCollapsed = header.classList.contains('collapsed');
+                setCollapseState(key, !isCollapsed);
+                header.classList.toggle('collapsed');
+                var list = header.nextElementSibling;
+                if (list) list.classList.toggle('hidden');
+                return;
+            }
+        }, true);
+
+        // UTILITY
+        function esc(str) {
+            var d = document.createElement('div');
+            d.textContent = str;
+            return d.innerHTML;
+        }
+
+        function escAttr(str) {
+            return str.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+
+        // EVENT LISTENERS
+        document.getElementById('searchBtn').addEventListener('click', doSearch);
+        document.getElementById('showInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') doSearch();
+        });
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.add-bar')) {
+                document.getElementById('searchResults').classList.remove('visible');
+            }
+        });
+
+        render();
+
+        // EXPORT - downloads data as JSON file
+        document.getElementById('exportBtn').addEventListener('click', function() {
+            var json = JSON.stringify(data, null, 2);
+            var blob = new Blob([json], { type: 'application/json' });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = 'the-shelf-backup.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+
+        // IMPORT - loads data from JSON file
+        document.getElementById('importBtn').addEventListener('click', function() {
+            document.getElementById('importFile').click();
+        });
+
+        document.getElementById('importFile').addEventListener('change', function(e) {
+            var file = e.target.files[0];
+            if (!file) return;
+            var reader = new FileReader();
+            reader.onload = function(ev) {
+                try {
+                    var imported = JSON.parse(ev.target.result);
+                    if (imported.shows && imported.movies && imported.books) {
+                        data = imported;
+                        save();
+                        render();
+                        alert('Imported successfully!');
+                    } else {
+                        alert('Invalid file format.');
+                    }
+                } catch(err) {
+                    alert('Could not read file.');
+                }
+            };
+            reader.readAsText(file);
+            e.target.value = '';
+        });
+        // FIREBASE REAL-TIME SYNC - listen for changes from other devices
+        dbRef.on('value', function(snapshot) {
+            if (ignoreNextSync) {
+                ignoreNextSync = false;
+                return;
+            }
+            var remoteData = snapshot.val();
+            if (remoteData && remoteData.shows && remoteData.movies && remoteData.books) {
+                data = remoteData;
+                try {
+                    if (storageAvailable) localStorage.setItem('trackerDataV4', JSON.stringify(data));
+                } catch(e) {}
+                render();
+            }
+        });
+
+        // Initial load from Firebase (overrides localStorage if available)
+        dbRef.once('value', function(snapshot) {
+            var remoteData = snapshot.val();
+            if (remoteData && remoteData.shows && remoteData.movies && remoteData.books) {
+                data = remoteData;
+                try {
+                    if (storageAvailable) localStorage.setItem('trackerDataV4', JSON.stringify(data));
+                } catch(e) {}
+                render();
+            } else {
+                // First time - push local data to Firebase
+                dbRef.set(data);
+            }
+            firebaseReady = true;
+        });
+
+    </script>
+
+
+</body></html>
